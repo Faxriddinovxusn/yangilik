@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #1a1a1a;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .animated-text {
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .animated-text:hover {
+    color: #ff4757;
+    transform: scale(1.2);
+  }
+
+  /* Simple animation */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animated-text {
+    animation: pulse 2s infinite;
+  }
+</style>
+</head>
+<body>
+
+<div class="animated-text">uylanmadigu hali, yangilik qattan😂 ha ha ha</div>
+
+</body>
+</html>
