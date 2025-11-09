@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animation Example</title>
+<title>Responsive Animation</title>
 <style>
   body {
     display: flex;
@@ -16,9 +16,9 @@
   }
 
   .animated-text {
-    font-size: 2rem;
+    font-size: clamp(1rem, 5vw, 2.5rem); /* Responsive font */
     color: white;
-    position: relative;
+    text-align: center;
     transition: transform 0.3s, color 0.3s;
   }
 
@@ -27,7 +27,6 @@
     transform: scale(1.2);
   }
 
-  /* Simple animation */
   @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
@@ -36,11 +35,18 @@
   .animated-text {
     animation: pulse 2s infinite;
   }
+
+  /* Optional: padding for small screens */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  }
 </style>
 </head>
 <body>
 
-<div class="animated-text">uylanmadigu hali, yangilik qattan😂 ha ha ha</div>
+<div class="animated-text">uylanmadigu hali yangilik qattan😂. ha ha ha </div>
 
 </body>
 </html>
